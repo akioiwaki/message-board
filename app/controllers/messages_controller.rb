@@ -9,11 +9,11 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.save
     redirect_to root_path , notice: 'メッセージを保存しました'
-  end
+  endgi
 
   private
   def message_params
     params.require(:message).permit(:name, :body)
   end
-  ## ここまで
+  ## ここまで.
 end
