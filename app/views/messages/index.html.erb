@@ -11,28 +11,23 @@
     <% end %>
   </div>
 </div>
-
-<%= form_for(@message) do |f| %>
-   <% if @message.errors.present? %>
-     <div class="alert alert-danger">
-       <%= alert %>
-       <ul>
-         <% @message.errors.full_messages.each do |full_message| %>
-         <li>
-           <%= full_message %>
-         </li>
-         <% end %>
-       </ul>
-     </div>
-   
-  名前:
-  <br>
-  <%= f.text_field :name %>
-  <br><br>
-  内容:
-  <br>
-  <%= f.text_area :body %>
-  <br>
-  <br>
-  <%= f.submit class: "btn btn-sm btn-primary" %>
-<% end %>
+<div class="row">
+    <div class="col-md-6">
+    <%= form_for(@message) do |f| %>
+      名前:
+      <%= f.text_field :name %>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6">
+      内容:
+      <%= f.text_area :body %>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6">
+      <%= f.submit class: "btn btn-md btn-primary" %>
+    </div>
+    </div>
+    <% end %>
+</div>
